@@ -80,7 +80,9 @@ PRODUCT_PACKAGES += \
     libshim_camera \
     libcamera_shim \
     camera.msm8916 \
-    Snap
+    Snap \
+    Camera2 \
+    SnapdragonCamera
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.5-impl \
@@ -91,6 +93,18 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     chargeonlymode
 include $(LOCAL_PATH)/rootdir/charger/charger.mk
+
+#POWEROFFALARM
+PRODUCT_PACKAGES += \
+    PowerOffAlarm
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.alarm_boot=true
+
+#TIMEKEEP
+PRODUCT_PACKAGES += \
+    timekeep \
+    TimeKeep
 
 # GPS
 PRODUCT_PACKAGES += \
