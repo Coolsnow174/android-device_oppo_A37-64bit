@@ -77,6 +77,9 @@ TARGET_SCREEN_WIDTH := 720
 
 # Camera
 PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service \
+    camera.device@1.0-impl
     libshim_camera \
     libcamera_shim \
     camera.msm8916 \
@@ -84,10 +87,6 @@ PRODUCT_PACKAGES += \
     Camera2 \
     SnapdragonCamera
 
-PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.5-impl \
-    android.hardware.camera.provider@2.5-service \
-    camera.device@1.0-impl
 
 #charger
 PRODUCT_PACKAGES += \
