@@ -44,6 +44,20 @@ PRODUCT_PACKAGES += \
     copybit.msm8916
 
 # Audio
+PRODUCT_PACKAGES += \
+    audio.primary.msm8916 \
+    audio.a2dp.default \
+    audio.r_submix.default \
+    audio.usb.default \
+    tinymix \
+    libaudio-resampler \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    libqcompostprocbundle \
+    android.hardware.audio@5.0-impl \
+    android.hardware.audio@2.0-service \
+    android.hardware.audio.effect@5.0-impl
+
 PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/audio/acdbdata/15399/Handset_cal.acdb:$(TARGET_COPY_OUT_SYSTEM)/etc/acdbdata/15399/Handset_cal.acdb \
    $(LOCAL_PATH)/audio/acdbdata/15399/Hdmi_cal.acdb:$(TARGET_COPY_OUT_SYSTEM)/etc/acdbdata/15399/Hdmi_cal.acdb \
@@ -115,6 +129,8 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl \
+    android.hardware.gnss@1.0-service \
     gps.msm8916
 
 PRODUCT_COPY_FILES += \
@@ -135,6 +151,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     DEVICE_PROVISIONED=1 \
     ril.subscription.types=NV,RUIM
+
+#FM
+PRODUCT_PACKAGES += \
+    FMRadio \
+    libfmjni 
 
 # Init scripts
 PRODUCT_PACKAGES += \
@@ -174,6 +195,12 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libOmxVidcCommon \
     libstagefrighthw
+
+# RIL
+PRODUCT_PACKAGES += \
+    libcnefeatureconfig \
+    librmnetctl \
+    libxml2
 
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
