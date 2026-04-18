@@ -37,6 +37,8 @@ on boot
     chown root system /sys/class/power_supply/bms/voltage_ocv
     chmod 0664 /sys/class/power_supply/bms/current_now
     chmod 0664 /sys/class/power_supply/bms/voltage_ocv
+    chown system system /dev/radio0
+    chmod 0660 /dev/radio0
 
 on init
     # add a cpuset for the camera daemon

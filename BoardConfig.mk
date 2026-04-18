@@ -58,6 +58,9 @@ TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/include
 TARGET_INIT_VENDOR_LIB := libinit_a37
 TARGET_RECOVERY_DEVICE_MODULES := libinit_a37
 
+#RIL
+TARGET_RIL_VARIANT := caf
+
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset 0x01000000 --tags_offset 0x00000100
@@ -70,6 +73,9 @@ TARGET_KERNEL_CONFIG := a37f_defconfig
 
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
+
+#FM
+BOARD_HAVE_QCOM_FM := true
 
 # LMKD stats logging
 TARGET_LMKD_STATS_LOG := true
