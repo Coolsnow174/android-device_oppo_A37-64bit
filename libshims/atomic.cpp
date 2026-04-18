@@ -14,16 +14,8 @@
  * limitations under the License.
  */
 
-<<<<<<< HEAD:libshims/atomic.cpp
 #include <string>
 #define ANDROID_ATOMIC_INLINE
 extern "C" {
 #include <cutils/atomic.h>
 }
-=======
-    <!-- 60 seconds for default screen timeout -->
-    <integer name="def_screen_off_timeout">60000</integer>
-    <bool name="def_screen_brightness_automatic_mode">true</bool>
-    <bool name="def_bluetooth_on">false</bool>
->>>>>>> e64f14ca (a6000: overlay-lineage: disable button backlight by default):overlay/frameworks/base/packages/SettingsProvider/res/values/defaults.xml
-
