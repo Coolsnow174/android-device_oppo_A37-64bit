@@ -111,3 +111,12 @@ service imsdatadaemon /system/vendor/bin/imsdatadaemon
 
 on property:sys.ims.QMI_DAEMON_STATUS=1
     start imsdatadaemon    
+
+on post-fs-data
+    mkdir /data/time/ 0700 system system
+
+service time_daemon /vendor/bin/time_daemon
+    class main
+    user system
+    group system
+    capabilities SYS_TIME
