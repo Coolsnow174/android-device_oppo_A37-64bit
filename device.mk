@@ -122,6 +122,11 @@ PRODUCT_PACKAGES += \
     chargeonlymode
 include $(LOCAL_PATH)/rootdir/charger/charger.mk
 
+#TIMEKEEP
+PRODUCT_PACKAGES += \
+    timekeep \
+    TimeKeep
+
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \
