@@ -59,9 +59,6 @@ Light::Light() {
     mLights.emplace(Type::ATTENTION, std::bind(&Light::handleWhiteLed, this, std::placeholders::_1, 0));
     mLights.emplace(Type::BACKLIGHT,
             [](const LightState& state) { set("/sys/class/leds/lcd-backlight/brightness", rgbToBrightness(state)); });
-    mLights.emplace(Type::BUTTONS,
-            [](const LightState& state) { set("/sys/class/leds/button-backlight/brightness", rgbToBrightness(state)); });
-    mLights.emplace(Type::NOTIFICATIONS, std::bind(&Light::handleWhiteLed, this, std::placeholders::_1, 1));
 }
 
 void Light::handleWhiteLed(const LightState& state, size_t index) {
