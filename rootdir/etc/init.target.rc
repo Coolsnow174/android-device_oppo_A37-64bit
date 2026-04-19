@@ -118,5 +118,5 @@ on post-fs-data
 service time_daemon /vendor/bin/time_daemon
     class main
     user system
-    group system
-    capabilities SYS_TIME
+    group system radio
+    capabilities SYS_TIME SETGID SETUID
