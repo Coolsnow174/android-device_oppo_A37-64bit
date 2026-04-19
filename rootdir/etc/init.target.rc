@@ -66,11 +66,11 @@ service vm_bms /system/vendor/bin/vm_bms
     user root
     group root wakelock
 
-service vendor.msm_irqbalance /vendor/bin/msm_irqbalance
-    class core
-    user root
-    group root
-    disabled
+#service vendor.msm_irqbalance /vendor/bin/msm_irqbalance
+ #   class core
+  #  user root
+   # group root
+    #disabled
 
 on post-fs
     chmod 0222 /sys/kernel/debug/tracing/trace_marker
