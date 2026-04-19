@@ -303,7 +303,7 @@ vendor/lib64/libOmxQcelp13Dec.so|1022e6f93a026c64aecf7537025e2ddfd8885973
 vendor/lib64/vendor.qti.hardware.vpp@1.1_vendor.so|cb6fa38c23656e2e930542b215c834a0c6f7ef47
 
 # Perf
-bin/msm_irqbalance:vendor/bin/msm_irqbalance
+#bin/msm_irqbalance:vendor/bin/msm_irqbalance
 vendor/bin/perfd
 vendor/lib64/libqti-perfd-client.so
 vendor/lib/libqti-perfd-client.so
