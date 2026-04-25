@@ -39,7 +39,12 @@ on boot
     chmod 0664 /sys/class/power_supply/bms/voltage_ocv
     chown system system /dev/radio0
     chmod 0660 /dev/radio0
-
+    #Compass
+    chown system input /sys/class/compass/akm8963/enable_mag
+    chown system input /sys/class/compass/akm8963/delay_mag
+    chmod 0660 /sys/class/compass/akm8963/enable_mag
+    chmod 0660 /sys/class/compass/akm8963/delay_mag
+    
 on init
     # add a cpuset for the camera daemon
     # we want all the cores for camera
