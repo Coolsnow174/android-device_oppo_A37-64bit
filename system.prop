@@ -49,3 +49,5 @@ persist.dbg.ims_volte_enable=1
 persist.dbg.volte_avail_ovr=1 
 
 qemu.hw.mainkeys=0
+ro.config.low_ram=true
+ro.config.low_ram2g=true
