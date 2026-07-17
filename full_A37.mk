@@ -18,6 +18,9 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+# Remove conflicting APN copy (handled by Arrow's apns-conf.xml module)
+PRODUCT_COPY_FILES := $(filter-out device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml,$(PRODUCT_COPY_FILES))
+
 # Inherit from A37 device
 $(call inherit-product, device/oppo/A37/device.mk)
 

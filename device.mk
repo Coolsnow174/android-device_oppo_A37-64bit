@@ -295,5 +295,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
+# QuickStep feature
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/permissions/feature_quickstep.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/feature_quickstep.xml
+
 # Call the proprietary setup
 $(call inherit-product, vendor/oppo/A37/A37-vendor.mk)

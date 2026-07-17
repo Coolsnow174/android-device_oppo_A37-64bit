@@ -18,6 +18,9 @@
 # sysfs files
 /sys/devices/virtual/block/zram\d+(/.*)?                                               u:object_r:sysfs_zram:s0
 
+# Root firmware directory and contents (e.g. /firmware/image, /firmware/radio)
+/firmware(/.*)?                                                                        u:object_r:firmware_file:s0
+
 #TIME DAEMON
 /vendor/bin/time_daemon                                                                u:object_r:time_daemon_exec:s0
 

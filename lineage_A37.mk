@@ -16,7 +16,10 @@
 $(call inherit-product, device/oppo/A37/full_A37.mk)
 
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_mini_phone.mk)
+$(call inherit-product, vendor/arrow/config/common.mk)
+
+# Exclude Lawnchair to avoid QuickStep conflict
+TARGET_EXCLUDE_LAWNCHAIR := true
 
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916

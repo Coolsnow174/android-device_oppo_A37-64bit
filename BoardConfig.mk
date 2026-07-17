@@ -95,6 +95,12 @@ BOARD_NO_SECURE_DISCARD := true
 # SELinux
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
+# Root dir extra folders and symlinks for QCOM firmware/dsp/persist
+BOARD_ROOT_EXTRA_FOLDERS += firmware firmware/radio persist
+BOARD_ROOT_EXTRA_SYMLINKS += /vendor/lib/dsp:/dsp
+BOARD_ROOT_EXTRA_SYMLINKS += /vendor/firmware_mnt/image:/firmware/image
+BOARD_ROOT_EXTRA_SYMLINKS += /vendor/firmware_mnt/verinfo:/firmware/verinfo
+
 # Shims
 TARGET_LD_SHIM_LIBS += \
     /system/vendor/lib64/lib-imsdpl.so|libshims_boringssl.so \
