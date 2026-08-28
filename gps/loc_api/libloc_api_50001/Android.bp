@@ -1,0 +1,38 @@
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+cc_library_shared {
+    name: "libloc_eng",
+    vendor: true,
+    srcs: [
+        "loc_eng.cpp",
+        "loc_eng_agps.cpp",
+        "loc_eng_xtra.cpp",
+        "loc_eng_ni.cpp",
+        "loc_eng_log.cpp",
+        "loc_eng_nmea.cpp",
+        "LocEngAdapter.cpp",
+        "loc_eng_dmn_conn.cpp",
+        "loc_eng_dmn_conn_handler.cpp",
+        "loc_eng_dmn_conn_thread_helper.c",
+        "loc_eng_dmn_conn_glue_msg.c",
+        "loc_eng_dmn_conn_glue_pipe.c",
+        "gps.c",
+        "loc.cpp",
+    ],
+    cflags: [
+        "-fno-short-enums",
+        "-D_ANDROID_",
+    ],
+    shared_libs: [
+        "libutils",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libloc_core",
+        "libgps.utils",
+        "libprocessgroup",
+    ],
+    export_include_dirs: ["."],
+}

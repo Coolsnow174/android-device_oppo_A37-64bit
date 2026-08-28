@@ -22,4 +22,5 @@ neverallow system_app netd_service:service_manager find;
 
 
 allow system_app apex_service:service_manager find;
-allow system_app system_suspend_control_service:service_manager find;
+# Removed: violates neverallow in system/sepolicy/private/system_suspend.te
+# allow system_app system_suspend_control_service:service_manager find;

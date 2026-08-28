@@ -1,3 +1,31 @@
+# Mount point directories (for combined root+system image)
+# These are mount points that exist in the root fs_config but not in the ramdisk
+# Note: /res, /oem, /storage are defined in system/sepolicy/private/file_contexts
+/acct(/.*)?                                                             u:object_r:rootfs:s0
+/apex(/.*)?                                                             u:object_r:rootfs:s0
+/bin(/.*)?                                                              u:object_r:rootfs:s0
+/bugreports(/.*)?                                                       u:object_r:rootfs:s0
+/config(/.*)?                                                           u:object_r:rootfs:s0
+/d(/.*)?                                                                u:object_r:rootfs:s0
+/data(/.*)?                                                             u:object_r:system_data_root_file:s0
+/data_mirror(/.*)?                                                      u:object_r:mirror_data_file:s0
+/debug_ramdisk(/.*)?                                                    u:object_r:tmpfs:s0
+/etc(/.*)?                                                              u:object_r:rootfs:s0
+/firmware(/.*)?                                                         u:object_r:unlabeled:s0
+/init(/.*)?                                                             u:object_r:init_exec:s0
+/init.environ.rc                                                        u:object_r:rootfs:s0
+/init.recovery.qcom.rc                                                  u:object_r:rootfs:s0
+/mnt(/.*)?                                                              u:object_r:tmpfs:s0
+/persist(/.*)?                                                          u:object_r:unlabeled:s0
+/postinstall(/.*)?                                                      u:object_r:postinstall_mnt_dir:s0
+/proc(/.*)?                                                             u:object_r:rootfs:s0
+/sdcard(/.*)?                                                           u:object_r:rootfs:s0
+/second_stage_resources(/.*)?                                           u:object_r:tmpfs:s0
+/sepolicy(/.*)?                                                         u:object_r:sepolicy_file:s0
+/sys(/.*)?                                                              u:object_r:sysfs:s0
+
+
+# Touch panel
 /sys/devices/virtual/touchscreen/touchscreen_dev/gesture_ctrl                          u:object_r:touchpanel_sysfs:s0
 /sys/devices/soc\.0/78b9000\.i2c/i2c-5/5-005d/keypad_enable                            u:object_r:touchpanel_sysfs:s0
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service.tomato              u:object_r:hal_lineage_touch_default_exec:s0
@@ -20,7 +48,3 @@
 
 #TIME DAEMON
 /vendor/bin/time_daemon                                                                u:object_r:time_daemon_exec:s0
-
-
-
-

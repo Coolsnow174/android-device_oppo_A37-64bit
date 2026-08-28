@@ -1,0 +1,28 @@
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+cc_library_shared {
+    name: "libloc_core",
+    vendor: true,
+    srcs: [
+        "LocApiBase.cpp",
+        "LocAdapterBase.cpp",
+        "ContextBase.cpp",
+        "LocDualContext.cpp",
+        "loc_core_log.cpp",
+    ],
+    cflags: [
+        "-fno-short-enums",
+        "-D_ANDROID_",
+    ],
+    shared_libs: [
+        "liblog",
+        "libutils",
+        "libcutils",
+        "libgps.utils",
+        "libdl",
+        "libprocessgroup",
+    ],
+    export_include_dirs: ["."],
+}

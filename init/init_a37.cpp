@@ -46,7 +46,7 @@
 using android::base::GetProperty;
 using android::base::ReadFileToString;
 using android::base::Trim;
-using android::init::property_set;
+using android::base::SetProperty;
 
 static void init_alarm_boot_properties()
 {
@@ -71,9 +71,9 @@ static void init_alarm_boot_properties()
          * 8 -> KPDPWR_N pin toggled (power key pressed)
          */
         if (Trim(boot_reason) == "3" || reboot_reason == "true")
-            property_set("ro.alarm_boot", "true");
+            SetProperty("ro.alarm_boot", "true");
         else
-            property_set("ro.alarm_boot", "false");
+            SetProperty("ro.alarm_boot", "false");
     }
 }
 
@@ -86,19 +86,19 @@ bool is2GB()
 
 void set_device_dalvik_properties()
 {
-  property_set("dalvik.vm.heapstartsize", "16m");
-  property_set("dalvik.vm.heapgrowthlimit", is2GB() ? "256m" : "128m");
-  property_set("dalvik.vm.heapsize", is2GB() ? "512m" : "256m");
-  property_set("dalvik.vm.heaptargetutilization", "0.75");
-  property_set("dalvik.vm.heapminfree", is2GB() ? "2m" : "512k");
-  property_set("dalvik.vm.heapmaxfree", "8m");
-  property_set("ro.vendor.qti.sys.fw.bg_apps_limit", is2GB() ? "17" : "9");
+  SetProperty("dalvik.vm.heapstartsize", "16m");
+  SetProperty("dalvik.vm.heapgrowthlimit", is2GB() ? "256m" : "128m");
+  SetProperty("dalvik.vm.heapsize", is2GB() ? "512m" : "256m");
+  SetProperty("dalvik.vm.heaptargetutilization", "0.75");
+  SetProperty("dalvik.vm.heapminfree", is2GB() ? "2m" : "512k");
+  SetProperty("dalvik.vm.heapmaxfree", "8m");
+  SetProperty("ro.vendor.qti.sys.fw.bg_apps_limit", is2GB() ? "17" : "9");
 }
 
 void vendor_load_properties()
 {
     // Init a dummy BT MAC address, will be overwritten later
-    property_set("ro.boot.btmacaddr", "00:00:00:00:00:00");
+    SetProperty("ro.boot.btmacaddr", "00:00:00:00:00:00");
     init_alarm_boot_properties();
     set_device_dalvik_properties();
 }

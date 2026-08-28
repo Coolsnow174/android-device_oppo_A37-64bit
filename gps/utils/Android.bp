@@ -1,0 +1,32 @@
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+cc_library_shared {
+    name: "libgps.utils",
+    vendor: true,
+    srcs: [
+        "loc_log.cpp",
+        "loc_cfg.cpp",
+        "msg_q.c",
+        "linked_list.c",
+        "loc_target.cpp",
+        "platform_lib_abstractions/elapsed_millis_since_boot.cpp",
+        "LocHeap.cpp",
+        "LocTimer.cpp",
+        "LocThread.cpp",
+        "MsgTask.cpp",
+        "loc_misc_utils.cpp",
+    ],
+    cflags: [
+        "-fno-short-enums",
+        "-D_ANDROID_",
+    ],
+    shared_libs: [
+        "libutils",
+        "libcutils",
+        "liblog",
+        "libprocessgroup",
+    ],
+    export_include_dirs: ["."],
+}

@@ -1,21 +1,25 @@
 #include <system/audio.h>
 #include <utils/String16.h>
+#include <media/stagefright/AudioSource.h>
 
 // Shim for frameworks/av/media/libstagefright/AudioSource
 
 namespace android {
 
-    // This is the constructor prototype for android::AudioSource in Ten which has an extra parameter
-    extern "C" void _ZN7android11AudioSourceC1E14audio_source_tRKNS_8String16Ejjjjii28audio_microphone_direction_tf(audio_source_t inputSource, const String16 &opPackageName,
-            uint32_t sampleRate, uint32_t channels, uint32_t outSampleRate, uid_t uid, pid_t pid,
-            audio_port_handle_t selectedDeviceId, int32_t selectedMicDirection, float selectedMicFieldDimension);
-
-    // Define the missing constructor symbol
+    // Define the missing constructor symbol that older code expects
+    // Old signature: AudioSource(audio_source_t, const String16&, uint32_t, uint32_t, uint32_t, uint32_t, int, int, audio_microphone_direction_t, float)
     extern "C" void _ZN7android11AudioSourceC1E14audio_source_tRKNS_8String16Ejjjji(audio_source_t inputSource, const String16 &opPackageName,
-        uint32_t sampleRate, uint32_t channelCount, uint32_t outSampleRate, uid_t uid, pid_t pid)
+        uint32_t sampleRate, uint32_t channelCount, uint32_t outSampleRate, uint32_t uid, int pid,
+        audio_microphone_direction_t selectedMicDirection, float selectedMicFieldDimension)
     {
-        // Invoke the Ten android::AudioSource constructor with the extra parameter
-        _ZN7android11AudioSourceC1E14audio_source_tRKNS_8String16Ejjjjii28audio_microphone_direction_tf(inputSource, opPackageName, sampleRate, channelCount, outSampleRate, uid, pid, 0, 0, 0.0f);
+        // Create audio_attributes_t from audio_source_t
+        audio_attributes_t attr = AUDIO_ATTRIBUTES_INITIALIZER;
+        attr.source = inputSource;
+        attr.usage = AUDIO_USAGE_MEDIA;  // default usage
+        
+        // Call the current legacy constructor directly using C++
+        new AudioSource(&attr, opPackageName, sampleRate, channelCount, outSampleRate, uid, pid,
+                        AUDIO_PORT_HANDLE_NONE, selectedMicDirection, selectedMicFieldDimension);
     }
 
 }

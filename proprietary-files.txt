@@ -119,10 +119,10 @@ vendor/lib/libmmcamera_truly_s5k3h7_new_eeprom.so
 
 # Camera
 bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
-lib/hw/camera.msm8916.so:vendor/lib/hw/camera.vendor.msm8916.so
-lib/libmmcamera_interface.so:vendor/lib/libmmcamera_interface.so
-lib/libmm-qcamera.so:vendor/lib/libmm-qcamera.so
-lib/libqomx_core.so:vendor/lib/libqomx_core.so
+vendor/lib/hw/camera.msm8916.so:vendor/lib/hw/camera.vendor.msm8916.so
+vendor/lib/libmmcamera_interface.so:vendor/lib/libmmcamera_interface.so
+vendor/lib/libmm-qcamera.so:vendor/lib/libmm-qcamera.so
+vendor/lib/libqomx_core.so:vendor/lib/libqomx_core.so
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
 vendor/lib/libmmcamera2_frame_algorithm.so
@@ -177,7 +177,7 @@ vendor/lib/libmmcamera_ov5648_15035.so
 vendor/lib/libmmcamera_s5k3h7_15035.so
 
 # JPEG  --yu_jalebi
-lib/libmmjpeg_interface.so:vendor/lib/libmmjpeg_interface.so
+vendor/lib/libmmjpeg_interface.so:vendor/lib/libmmjpeg_interface.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegehw.so
 vendor/lib/libmmjpeg.so
@@ -276,12 +276,12 @@ etc/firmware/a300_pfp.fw:vendor/firmware/a300_pfp.fw
 etc/firmware/a300_pm4.fw:vendor/firmware/a300_pm4.fw
 
 # Media - from LA.BR.1.2.9.1-02310-8x16.0
-lib/libmmosal.so|3f0e86afd0c322f32b78e473dbc17368ec6f91f6
-lib/libmmparser_lite.so|3f0a628b0ae2d1c6cd729b2dc9bf467301a016c4
-lib/vendor.qti.hardware.vpp@1.1.so|e6e722cae86a788f4f579a33e41247d72832eec0
-lib64/libmmosal.so|b0e9f36e3bbaf7f839333b70e714b3f27fadb886
-lib64/libmmparser_lite.so|b5028731aa43c60289283f2e272336067e622092
-lib64/vendor.qti.hardware.vpp@1.1.so|7dbc90158f9e7b3675372b65e095f9a8fb0812b5
+vendor/lib/libmmosal.so|3f0e86afd0c322f32b78e473dbc17368ec6f91f6
+vendor/lib/libmmparser_lite.so|3f0a628b0ae2d1c6cd729b2dc9bf467301a016c4
+vendor/lib/vendor.qti.hardware.vpp@1.1.so|e6e722cae86a788f4f579a33e41247d72832eec0
+vendor/lib64/libmmosal.so|b0e9f36e3bbaf7f839333b70e714b3f27fadb886
+vendor/lib64/libmmparser_lite.so|b5028731aa43c60289283f2e272336067e622092
+vendor/lib64/vendor.qti.hardware.vpp@1.1.so|7dbc90158f9e7b3675372b65e095f9a8fb0812b5
 vendor/lib/libAlacSwDec.so|57969ad9069f7109518eff3bf5a8071ee62c299c
 vendor/lib/libApeSwDec.so|31ef5e2f5344e7948dced4e683ebf4ae585b4681
 vendor/lib/libI420colorconvert.so|9d109a3afc089497f2977ccffdbd27683ae950a9
@@ -315,14 +315,14 @@ vendor/lib/libqti-perfd-client.so
 bin/mm-pp-daemon:vendor/bin/mm-pp-daemon|0e2db7244e7616154cb6990bfac76dd5711afb34
 etc/permissions/com.qti.snapdragon.sdk.display.xml|bd2a3394bdd6ec4e94fa6a59e816a97e89940ab6
 -framework/com.qti.snapdragon.sdk.display.jar|103a8e046411d07cc140820b92827d4d4ae67e6b
-lib/vendor.display.color@1.0.so|6c7607135572249b34c5bf53171abf040a8fed30
-lib/vendor.display.config@1.0.so|fd190afe8af63925c34d969de14767fd4a704812
-lib/vendor.display.postproc@1.0.so|27510c5ef88c313305d6d5bc10c32b8331533727
-lib/vendor.qti.hardware.qdutils_disp@1.0.so|d6971ea8c63df7e7dce670733e4f6de08867977c
-lib64/vendor.display.color@1.0.so|9e2734492cc02d73c5ccfc9b76a43517138c6342
-lib64/vendor.display.config@1.0.so|cc4ab2a6435755d8bd7106e5536e93ecac141770
-lib64/vendor.display.postproc@1.0.so|3a1f972285b455fbd4a0b00373688a6b55e1789e
-lib64/vendor.qti.hardware.qdutils_disp@1.0.so|d0d379b2562702d47f1fc39935d9395473c6d598
+vendor/lib/vendor.display.color@1.0.so|6c7607135572249b34c5bf53171abf040a8fed30
+vendor/lib/vendor.display.config@1.0.so|fd190afe8af63925c34d969de14767fd4a704812
+vendor/lib/vendor.display.postproc@1.0.so|27510c5ef88c313305d6d5bc10c32b8331533727
+vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so|d6971ea8c63df7e7dce670733e4f6de08867977c
+vendor/lib64/vendor.display.color@1.0.so|9e2734492cc02d73c5ccfc9b76a43517138c6342
+vendor/lib64/vendor.display.config@1.0.so|cc4ab2a6435755d8bd7106e5536e93ecac141770
+vendor/lib64/vendor.display.postproc@1.0.so|3a1f972285b455fbd4a0b00373688a6b55e1789e
+vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so|d0d379b2562702d47f1fc39935d9395473c6d598
 vendor/lib/libdisp-aba.so|93634695d87d19f5874fdebde3d6c6f84a3bb17e
 vendor/lib/libsd_sdk_display.so|52d09ebcc6d61e894562a3357bba3bd88df3571c
 vendor/lib/libmm-abl.so|3f029a728e3a115ce65f33629b1174e1811cb1d5
