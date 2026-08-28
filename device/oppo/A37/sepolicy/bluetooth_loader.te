@@ -1,0 +1,14 @@
+# Declared by device sepolicy; no upstream declaration exists.
+type bluetooth_loader, domain;
+type bluetooth_loader_exec, exec_type, vendor_file_type, file_type;
+
+# Read mac address from persist partition
+allow bluetooth_loader persist_file:dir search;
+r_dir_file(bluetooth_loader, bluetooth_data_file)
+# Removed dac_override dac_read_search - violates platform neverallow
+allow bluetooth_loader self:capability { chown };
+
+# It may write a random mac here
+allow bluetooth_loader persist_file:dir { add_name write };
+allow bluetooth_loader persist_file:file { create_file_perms };
+allow bluetooth_loader bluetooth_data_file:file create_file_perms;

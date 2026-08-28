@@ -1,0 +1,7 @@
+type hal_alarm_qti_default, domain;
+type hal_alarm_qti_default_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(hal_alarm_qti_default)
+# hal_server_domain(hal_alarm_qti_default, hal_alarm_qti) - attribute not in policy
+
+allow hal_alarm_qti_default rtc_device:chr_file rw_file_perms;
